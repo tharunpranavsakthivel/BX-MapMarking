@@ -1,1 +1,2 @@
 # BX-MapMarking
+This project consists of three layers which includes mineral resource, population index of 2005 and volcanoes(USA).This is completely coded using the folium library(Maps).The map can be used to plot any data with latitude and longitude give. Hence the Data.csv or volcanoes.txt file can be altered according to produce new markings. All the data used here are from mrdata.usgs.gov (website). All the credits for the data goes to the U.S. Geological Survey.
