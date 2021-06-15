@@ -1,14 +1,15 @@
 import folium as fm
 import pandas as pd
 
+#Reading Data
+data_v = pd.read_csv('Volcanoes.txt')
+data_m = pd.read_csv('Data.csv')
 
-
-data_v = pd.read_csv('D:/IP PROJECT/Maps/Code/Volcanoes.txt')
-data_m = pd.read_csv('D:/IP PROJECT/Maps/Code/Data.csv')
+#Droping error Data
 data_m=data_m.dropna(subset=['longitude'])
-
 data_m=data_m.dropna(subset=['latitude'])
 
+#Alloting Variables
 lat_v = list(data_v['LAT'])
 lon_v = list(data_v['LON'])
 elev_v = list(data_v['ELEV'])
@@ -19,6 +20,7 @@ det_m = list(data_m['commodity'])
 
 maps = fm.Map(location=[45.372, -121.6972], zoom_start=12, tiles="OpenStreetMap")
 
+#Can be changed according to the data
 def color(x):
     x = x.lower()
     if x == "nickel":
@@ -66,5 +68,5 @@ maps.add_child(fgv)
 maps.add_child(fgp)
 maps.add_child(fgm)
 fm.LayerControl().add_to(maps)
-maps.save('D:/IP PROJECT/Maps/maps.html')
+maps.save('maps.html')
 
